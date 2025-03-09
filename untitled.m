@@ -1,0 +1,10 @@
+img = imread('C:\Users\giris\Downloads\pillsetc.pnm');
+subplot(2,1,1);
+imshow(img);
+title('Original Image');
+corners = corner(rgb2gray(img), 'Harris', 'SensitivityFactor', k, 'QualityLevel', threshold);
+subplot(2,1,2);
+imshow(img);
+title('Corner Detection Keys');
+hold on;
+plot(corners(:,1), corners(:,2), 'g*');
